@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "websvc.fullname" . }}
+  name: {{ include "websvc-env.fullname" . }}
   labels:
-    {{- include "websvc.labels" . | nindent 4 }}
+    {{- include "websvc-env.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.services.type }}
   ports:
@@ -15,4 +15,4 @@ spec:
       nodePort: {{ $v.nodeport }}
   {{- end }}
   selector:
-    {{- include "websvc.selectorLabels" . | nindent 4 }}
+    {{- include "websvc-env.selectorLabels" . | nindent 4 }}

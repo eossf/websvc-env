@@ -34,7 +34,7 @@ kubectl create namespace prod
 
 ## -- Deployment
 
-### install websvc package INTEGRATION
+### install websvc-env package INTEGRATION
 ````
 cd ~/websvc-env
 helm install -f ../deploy/int.yaml websvc-env ./websvc-env
@@ -45,7 +45,7 @@ helm install -f ../deploy/int.yaml websvc-env ./websvc-env
 
 For INT NodePort 32000 
 ````
-helm install -f ../deploy/int.yaml websvc-env ./websvc-env
+helm install -f ../deploy/INT/int.yaml websvc-env ./websvc-env
 curl http://NODE01:32000/info 
 #default : curl http://45.76.46.182:32000/info 
 

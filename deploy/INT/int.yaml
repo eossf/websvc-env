@@ -5,14 +5,14 @@ hosts:
   second_url: "2sd.url.int" 
 
 image:
-  repository: "metairie/websvc"
+  repository: "metairie/websvc-env"
   pullPolicy: IfNotPresent
   tag: "0.0.1"
 
 services:
   type: NodePort
   svc:
-    - name: websvc
+    - name: websvc-env
       port: 8000
       targetport: 8000
       protocol: TCP
