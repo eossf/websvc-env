@@ -1,0 +1,19 @@
+token: "dev-token-qqq"
+
+hosts:
+  main_url: "1st.url.prod"
+  second_url: "2sd.url.prod" 
+
+image:
+  repository: "metairie/websvc-env"
+  pullPolicy: IfNotPresent
+  tag: "0.0.1"
+
+services:
+  type: NodePort
+  svc:
+    - name: websvc-env
+      port: 8000
+      targetport: 8000
+      protocol: TCP
+      nodeport: 32003

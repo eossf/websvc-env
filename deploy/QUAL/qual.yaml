@@ -1,0 +1,19 @@
+token: "dev-token-ccc"
+
+hosts:
+  main_url: "1st.url.qual"
+  second_url: "2sd.url.qual" 
+
+image:
+  repository: "metairie/websvc-env"
+  pullPolicy: IfNotPresent
+  tag: "0.0.1"
+
+services:
+  type: NodePort
+  svc:
+    - name: websvc-env
+      port: 8000
+      targetport: 8000
+      protocol: TCP
+      nodeport: 32001

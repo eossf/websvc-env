@@ -1,0 +1,19 @@
+token: "dev-token-ppp"
+
+hosts:
+  main_url: "1st.url.preprod"
+  second_url: "2sd.url.preprod" 
+
+image:
+  repository: "metairie/websvc-env"
+  pullPolicy: IfNotPresent
+  tag: "0.0.1"
+
+services:
+  type: NodePort
+  svc:
+    - name: websvc-env
+      port: 8000
+      targetport: 8000
+      protocol: TCP
+      nodeport: 32002
