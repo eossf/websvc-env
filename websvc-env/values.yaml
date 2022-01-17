@@ -1,0 +1,41 @@
+replicaCount: 1
+
+namespace: websvc
+
+hosts:
+  main_url: "1st.url"
+  second_url: "2sd.url" 
+
+image:
+  repository: "metairie/websvc"
+  pullPolicy: IfNotPresent
+  tag: "0.0.1"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+podAnnotations: {}
+podSecurityContext: {}
+securityContext: {}
+serviceAccount:
+  create: false
+
+services:
+  type: NodePort
+  svc:
+    - name: websvc
+      port: 8000
+      targetport: 8000
+      protocol: TCP
+      nodeport: 32000
+
+resources: {}
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

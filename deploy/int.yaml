@@ -1,0 +1,19 @@
+token: "dev-token-dddddddddddd"
+
+hosts:
+  main_url: "1st.url.int"
+  second_url: "2sd.url.int" 
+
+image:
+  repository: "metairie/websvc"
+  pullPolicy: IfNotPresent
+  tag: "0.0.1"
+
+services:
+  type: NodePort
+  svc:
+    - name: websvc
+      port: 8000
+      targetport: 8000
+      protocol: TCP
+      nodeport: 32000

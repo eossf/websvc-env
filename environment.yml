@@ -1,0 +1,19 @@
+name: WEBSVCENV
+channels:
+  - defaults
+dependencies:
+  - ca-certificates
+  - nltk
+  - openssl
+  - pip
+  - python
+  - sqlite
+  - wheel
+  - zlib
+  - pip:
+    - fastapi
+    - uvicorn
+    - pyarrow
+    - pydantic
+    - requests
+    - gunicorn
